@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Maintenance</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6;
+    }
+
+    .maintenance-icon {
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex justify-center p-4">
+  <main class="pb-4" style="height: fit-content;">
+    <div class="bg-white rounded-xl shadow-lg p-8 max-w-2xl w-full mx-auto" style="height: fit-content;">
+      <div class="flex flex-col items-center text-center">
+        <!-- Odoo-inspired logo -->
+        <div class="mb-6 text-emerald-600">
+          <svg class="w-24 h-24 maintenance-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
+            </path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+        </div>
+
+        <h1 class="text-3xl font-bold text-gray-800 mb-2">System Maintenance</h1>
+        <div class="h-1 w-20 bg-emerald-500 rounded mb-6"></div>
+
+        <p class="text-gray-600 mb-6 text-lg">
+          {{MAINTENANCE_DESCRIPTION}}
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full mb-8">
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h3 class="font-semibold text-gray-800 mb-2">Estimated Completion</h3>
+            <p class="text-gray-600">{{COMPLETION_TIME}}</p>
+          </div>
+          <div class="bg-gray-50 p-4 rounded-lg">
+            <h3 class="font-semibold text-gray-800 mb-2">Status</h3>
+            <div class="flex items-center justify-center md:justify-start">
+              <span class="h-3 w-3 bg-yellow-400 rounded-full mr-2 animate-pulse"></span>
+              <p class="text-gray-600">In Progress</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full text-left">
+          <h3 class="font-semibold text-gray-800 mb-4">Maintenance Progress</h3>
+          <div class="space-y-4">
+            <!-- STEPS_PLACEHOLDER -->
+          </div>
+        </div>
+
+
+        <div class="mt-8 w-full">
+          <div class="flex flex-col sm:flex-row justify-between items-center gap-4 border-t pt-6">
+            <div class="text-gray-600 text-sm">
+              Need assistance? Contact us: <a style="color: #1a73e8" href="mailto:{{CONTACT_EMAIL}}">{{CONTACT_EMAIL}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
